@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Login.module.scss';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -17,7 +18,7 @@ class Login extends React.Component {
             type="password"
             autoComplete="current-password"
           />
-          <Button className={styles.button} variant="outlined">Log in</Button>
+          <Button className={styles.button} component={Link} to={`${process.env.PUBLIC_URL}/`}>Log in</Button>
         </form>
       </div>
 

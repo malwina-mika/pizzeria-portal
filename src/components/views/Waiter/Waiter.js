@@ -7,6 +7,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
+
 
 const demoContent = [
   { id: '1', status: 'free', order: null },
@@ -28,7 +30,7 @@ const renderActions = status => {
       );
     case 'thinking':
       return (
-        <Button>new order</Button>
+        <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
       );
     case 'ordered':
       return (
@@ -73,9 +75,7 @@ const Waiter = () => (
             </TableCell>
             <TableCell>
               {row.order && (
-                <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-                  {row.order}
-                </Button>
+                <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>{row.order}</Button>
               )}
             </TableCell>
             <TableCell>
@@ -85,7 +85,7 @@ const Waiter = () => (
         ))}
       </TableBody>
     </Table>
-  </Paper>
+  </Paper >
 );
 
 export default Waiter;

@@ -25,67 +25,67 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
-const hours = ['18:00', '18:30', '19:00', '19:30'];
+const hours = ['12:00', '12:30', '13:00', '13:30'];
 
 const tables = [
   {
     id: 1,
     bookings: {
-      '18:00': { hour: '18:00', type: 'Booking', typeId: '123' },
-      '18:30': { hour: '18:00', type: 'Booking', typeId: '123' },
-      '19:00': {},
-      '19:30': {},
+      '12:00': { hour: '12:00', type: 'Booking', typeId: '123' },
+      '12:30': { hour: '12:00', type: 'Booking', typeId: '123' },
+      '13:00': {},
+      '13:30': {},
     },
     events: {
-      '18:00': {},
-      '18:30': {},
-      '19:00': {},
-      '19:30': {},
+      '12:00': {},
+      '12:30': {},
+      '13:00': {},
+      '13:30': {},
     },
   },
   {
     id: 2,
     bookings: {
-      '18:00': {},
-      '18:30': {},
-      '19:00': {},
-      '19:30': {},
+      '12:00': {},
+      '12:30': {},
+      '13:00': {},
+      '13:30': {},
     },
     events: {
-      '18:00': { hour: '18:00', type: 'Event', typeId: '123' },
-      '18:30': { hour: '18:00', type: 'Event', typeId: '123' },
-      '19:00': { hour: '18:00', type: 'Event', typeId: '123' },
-      '19:30': { hour: '18:00', type: 'Event', typeId: '123' },
+      '12:00': { hour: '12:00', type: 'Event', typeId: '123' },
+      '12:30': { hour: '12:00', type: 'Event', typeId: '123' },
+      '13:00': { hour: '13:00', type: 'Event', typeId: '123' },
+      '13:30': { hour: '13:00', type: 'Event', typeId: '123' },
     },
   },
   {
     id: 3,
     bookings: {
-      '18:00': {},
-      '18:30': {},
-      '19:00': {},
-      '19:30': {},
+      '12:00': {},
+      '12:30': {},
+      '13:00': {},
+      '13:30': {},
     },
     events: {
-      '18:00': {},
-      '18:30': {},
-      '19:00': {},
-      '19:30': {},
+      '12:00': {},
+      '12:30': {},
+      '13:00': {},
+      '13:30': {},
     },
   },
   {
     id: 4,
     bookings: {
-      '18:00': {},
-      '18:30': {},
-      '19:00': {},
-      '19:30': {},
+      '12:00': {},
+      '12:30': {},
+      '13:00': {},
+      '13:30': {},
     },
     events: {
-      '18:00': {},
-      '18:30': {},
-      '19:00': { hour: '19:00', type: 'Event', typeId: '234' },
-      '19:30': { hour: '19:30', type: 'Event', typeId: '234' },
+      '12:00': {},
+      '12:30': {},
+      '13:00': { hour: '13:00', type: 'Event', typeId: '234' },
+      '13:30': { hour: '13:30', type: 'Event', typeId: '234' },
     },
   },
 
@@ -165,7 +165,7 @@ const Tables = () => {
                           </Button>
                           :
                           isEvent ?
-                            <Button component={Link} to={`${process.env.PUBLIC_URL}/tables/event/123`}>
+                            <Button component={Link} to={`${process.env.PUBLIC_URL}/tables/events/123`}>
                               {table.events[i].type}-{isEvent}
                             </Button>
                             : null
@@ -185,7 +185,7 @@ const Tables = () => {
           <Fab color="primary" aria-label="add" variant="extended" component={Link} to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
             <AddIcon /> NEW BOOKING
           </Fab>
-          <Fab color="primary" aria-label="add" variant="extended" component={Link} to={`${process.env.PUBLIC_URL}/tables/event/new`}>
+          <Fab color="primary" aria-label="add" variant="extended" component={Link} to={`${process.env.PUBLIC_URL}/tables/events/new`}>
             <AddIcon /> NEW EVENT
           </Fab>
         </Grid>

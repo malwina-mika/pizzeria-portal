@@ -19,8 +19,6 @@ const MainLayout = ({ children }) => (
       <Toolbar />
       {children}
     </Container>
-MainLayout
-
   </div >
 );
 

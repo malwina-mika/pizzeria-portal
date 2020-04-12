@@ -40,8 +40,10 @@
     ]
   },
   "dependencies": {
+    "@date-io/date-fns": "1.x",
     "@material-ui/core": "^4.9.9",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/pickers": "^3.2.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -49,6 +51,7 @@
     "@types/node": "^13.5.3",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
+    "date-fns": "^2.12.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "json-server": "^0.16.1",

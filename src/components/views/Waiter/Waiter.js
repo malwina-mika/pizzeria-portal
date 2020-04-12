@@ -25,7 +25,6 @@ const renderActions = status => {
       return (
         <>
           <Button>thinking</Button>
-          <Button>new order</Button>
         </>
       );
     case 'thinking':

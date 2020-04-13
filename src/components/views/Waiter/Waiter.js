@@ -18,20 +18,21 @@ class Waiter extends React.Component {
       error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
     tables: PropTypes.array,
+    updateStatus: PropTypes.func,
   }
 
   componentDidMount() {
     const { fetchTables } = this.props;
-    console.log(this.props.tables);
     fetchTables();
   }
 
-  renderActions(status) {
+  renderActions(orderId, status) {
+    const { updateStatus } = this.props;
     switch (status) {
       case 'free':
         return (
           <>
-            <Button>thinking</Button>
+            <Button onClick={() => updateStatus(orderId, 'thinking')} color="secondary" variant="contained">thinking</Button>
             <Button variant="contained" color="primary" component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Button>
           </>
         );
@@ -41,19 +42,19 @@ class Waiter extends React.Component {
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => updateStatus(orderId, 'prepared')} color="secondary" variant="contained">prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => updateStatus(orderId, 'delivered')} color="secondary" variant="contained">delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => updateStatus(orderId, 'paid')} color="secondary" variant="contained">paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button onClick={() => updateStatus(orderId, 'free')} color="secondary" variant="contained">free</Button>
         );
       default:
         return null;
@@ -103,7 +104,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row.id, row.status)}
                   </TableCell>
                 </TableRow>
               ))}
